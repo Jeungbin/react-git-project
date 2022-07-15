@@ -17,7 +17,7 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const clearCart = () => {
-    dispatch({ type: "CREAR_CART" });
+    dispatch({ type: "CLEAR_CART" });
   };
   const remove = (id) => {
     dispatch({ type: "REMOVE", payload: id });
@@ -40,10 +40,10 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchData();
   }, []);
+
   useEffect(() => {
     dispatch({ type: "GET_TOTALS" });
   }, [state.cart]);
-
   return (
     <AppContext.Provider
       value={{
