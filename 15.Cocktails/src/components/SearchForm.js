@@ -3,11 +3,11 @@ import { useGlobalContext } from "../context";
 
 const SearchForm = () => {
   const { setSearchTerm } = useGlobalContext();
-  const searchValue = React.useRef("");
+  const searchValue = React.useRef(""); // input's focus
 
   React.useEffect(() => {
     searchValue.current.focus();
-  }, []);
+  }, []); // input's focus
 
   function searchCocktail() {
     setSearchTerm(searchValue.current.value);
@@ -25,8 +25,10 @@ const SearchForm = () => {
             type="text"
             name="name"
             id="name"
-            ref={searchValue}
-            onChange={searchCocktail}
+            ref={searchValue} // input's focus
+            onChange={searchCocktail} // SearchTerm's value change
+            // affect to fetch url
+            // const response = await fetch(`${url}${searchTerm}`);
           />
         </div>
       </form>
