@@ -1,5 +1,6 @@
 // useRef is using in the form of 'focus'
 // useRef is act like a querySelectior
+//
 import React from "react";
 import { useGlobalContext } from "../context";
 export default function SearchForm() {
